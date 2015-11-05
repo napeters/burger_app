@@ -54,7 +54,23 @@ div > h1 {
   text-decoration: none;
 }
 
+.posts_container {
+  padding: 20px
+}
+
+.post {
+  border-bottom: 1px solid gray;
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
 .burger_pic {
   width: 300px;
   height: 300px;
+}
+
+.post > p {
+  font-size: 20px;
+  font-weight: lighter;
 }
