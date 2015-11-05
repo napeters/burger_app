@@ -1,0 +1,39 @@
+<h1>Create a new post</h1>
+
+<div>
+  <%= form_for [ @user, @post ] do |f| %>
+    <% if @post.errors.any? %>
+      <div>
+        <h5>
+          Just fix these
+          <%= pluralize(@post.errors.count,"error") %>
+          !
+        </h5>
+        <ol>
+          <% @post.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+          <% end %>
+        </ol>
+      </div>
+    <% end %>
+
+    <p>
+      <%= f.text_field :image_url, placeholder: "Image URL" %>
+    </p>
+    <p>
+      <%= f.text_area :caption, placeholder: "Caption" %>
+    </p>
+    <p>
+      <%= f.text_field :rating, placeholder: "Rating" %>
+    </p>
+    <p>
+      <%= f.text_field :restaurant, placeholder: "Restaurant" %>
+    </p>
+    <p>
+      <%= f.text_field :location, placeholder: "City" %>
+    </p>
+    <p>
+      <%= f.submit "Share!" %>
+    </p>
+  <% end %>
+</div>

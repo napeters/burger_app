@@ -1,0 +1,9 @@
+<div>
+  <img class="burger_pic" src="<%= @post.image_url %>" >
+  <p><%= @post.caption %></p>
+</div>
+<p class="delete">
+  <%= link_to "Delete", user_post_path,
+      method: :delete,
+      data: { confirm: "Are you sure you want to delete this post?" } %>
+</p>
