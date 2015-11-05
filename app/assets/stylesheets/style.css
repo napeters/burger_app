@@ -1,0 +1,55 @@
+body {
+  background: rgb(160,0,0);
+}
+
+.flash {
+  background: rgb(204,204,204);
+  text-align: center;
+  opacity: 0.4;
+}
+
+.app_name {
+  font-weight: bold;
+  text-align: center;
+  font-size: 50px;
+}
+
+.content {
+  background: rgb(255,245,195);
+  max-width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.prof_header {
+  padding-top: 20px;
+}
+
+div > h1 {
+  display: inline;
+  vertical-align: top;
+  padding-top: 50px;
+
+}
+
+img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  display: inline;
+  margin-top: -10px;
+}
+
+.bio {
+  margin: 0;
+}
+
+.delete {
+  text-align: right;
+  margin: 10px;
+}
+
+.delete a:link{
+  text-decoration: none;
+}

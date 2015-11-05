@@ -1,0 +1,10 @@
+<h1>Create an account<h1>
+
+<div>
+  <%= form_for @user do |f| %>
+    <%= render partial: 'form', locals: {f: f} %>
+    <p>
+      <%= f.submit "Let the salivating begin" %>
+    </p>
+  <% end %>
+</div>
