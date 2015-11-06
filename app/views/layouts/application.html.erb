@@ -2,22 +2,27 @@
 <html>
 <head>
   <title>Meat in the Middle</title>
+  <link rel="icon" type="image/jpg" href="http://emojipop.net/data/images/emoji_set_487.png">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<p class="flash"><%= flash.notice %></p>
+  <p class="flash"><%= flash.notice %></p>
 
-<p>
-  <% if current_user %>
-  <%= "@#{current_user.username}" %>
-  <% end %>
-</p>
+  <p class="account_info">
+    <% if current_user %>
+      <%= link_to "@#{current_user.username}", user_path(current_user) %> |
+      <%= link_to "Log out", "/logout" %>
+    <% else %>
+      <%= link_to "Log in", "/login" %> |
+      <%= link_to "Create an account", new_user_path %>
+    <% end %>
+  </p>
 
-<h1 class="app_name">Meat 🍔 in 🍔 the 🍔 Middle</h1>
-<div class="content"><%= yield %></div>
+  <h1 class="app_name">Meat in the Middle</h1>
+  <div class="content"><%= yield %></div>
 
 </body>
 </html>

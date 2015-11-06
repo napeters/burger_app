@@ -1,0 +1,10 @@
+<div class="posts_container">
+  <% @user_posts.each do |post| %>
+    <div class="post">
+      <a href="<%= user_post_path(@user,post) %>">
+        <img class="burger_pic" src="<%= post.image_url %>" >
+      </a>
+      <p><%= post.caption %></p>
+    </div>
+  <% end %>
+</div>

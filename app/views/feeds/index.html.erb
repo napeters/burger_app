@@ -1,9 +1,11 @@
-<h1>NOMZ<h1>
-
 <div class="posts_container">
   <% @posts.each do |post| %>
+    <% user = User.find_by id: post.user_id %>
     <div class="post">
-      <img class="burger_pic" src="<%= post.image_url %>" >
+      <a href="<%= user_post_path(user,post) %>">
+        <img class="burger_pic" src="<%= post.image_url %>" >
+      </a>
+      <p><%= link_to "@#{user.username}", user_path(user) %></p>
       <p><%= post.caption %></p>
     </div>
   <% end %>

@@ -1,10 +1,3 @@
 <h1><%= "All of @#{@user.username}'s Posts" %><h1>
 
-<div class="posts_container">
-  <% @posts.each do |post| %>
-    <div class="post">
-      <img class="burger_pic" src="<%= post.image_url %>" >
-      <p><%= post.caption %></p>
-    </div>
-  <% end %>
-</div>
+<%= render "userposts" %>

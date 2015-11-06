@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
 
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to("/users")
+      redirect_to("/")
     else
       flash.notice = ("Incorrect email address and/or password")
       redirect_to("/login")
@@ -16,6 +16,6 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    redirect_to("/users")
+    redirect_to("/")
   end
 end
