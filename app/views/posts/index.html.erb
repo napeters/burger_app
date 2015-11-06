@@ -1,3 +1,7 @@
-<h1><%= "All of @#{@user.username}'s Posts" %><h1>
+<h1><%= "All of @#{@user.username}'s Posts" %></h1>
 
 <%= render "userposts" %>
+
+<p>
+  <%= link_to "Back to all posts", "/", {:class => "back"} %>
+</p>

@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 
   def index
     @user = User.find(params[:user_id])
-    @user_posts = @user.posts
+    @user_posts = @user.posts.order('created_at DESC')
   end
 
   def new
@@ -12,12 +12,16 @@ class PostsController < ApplicationController
   end
 
   def create
+    @user = User.find(params[:user_id])
     @post = Post.new(post_params)
     @post.user_id = params[:user_id]
-    @post.save
 
-    flash.notice = "Posted!"
-    redirect_to user_posts_path
+    if @post.save
+      flash.notice = "Posted!"
+      redirect_to user_posts_path
+    else
+      render 'new'
+    end
   end
 
   def show
@@ -31,13 +35,14 @@ class PostsController < ApplicationController
   end
 
   def update
+    @user = User.find(params[:user_id])
     @post = Post.find(params[:id])
 
     if @post.update(post_params)
       flash.notice = "Post updated!"
       redirect_to user_post_path
     else
-      render 'edit'
+      render template: "posts/edit"
     end
   end
 

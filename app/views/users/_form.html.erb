@@ -1,9 +1,9 @@
 <% if @user.errors.any? %>
   <div>
     <h5>
-      Just fix these
+      Hold up,
       <%= pluralize(@user.errors.count,"error") %>
-      !
+      here
     </h5>
     <ol>
       <% @user.errors.full_messages.each do |msg| %>
@@ -24,13 +24,6 @@
 </p>
 <p>
   <%= f.text_field :email_address, placeholder: "Email Address" %>
-</p>
-<p>
-  <%= f.password_field :password, placeholder: "Password" %>
-</p>
-<p>
-  <%= f.password_field :password_confirmation,
-                        placeholder: "Password Confirmation" %>
 </p>
 <p>
   <%= f.text_field :profile_pic_url, placeholder: "Profile Pic URL" %>

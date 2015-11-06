@@ -6,7 +6,7 @@
         <img class="burger_pic" src="<%= post.image_url %>" >
       </a>
       <p><%= link_to "@#{user.username}", user_path(user) %></p>
-      <p><%= post.caption %></p>
+      <p class="caption"><%= post.caption %></p>
     </div>
   <% end %>
 </div>

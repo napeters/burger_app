@@ -5,9 +5,9 @@
     <% if @post.errors.any? %>
       <div>
         <h5>
-          Just fix these
+          Hold up,
           <%= pluralize(@post.errors.count,"error") %>
-          !
+          here
         </h5>
         <ol>
           <% @post.errors.full_messages.each do |msg| %>

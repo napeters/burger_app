@@ -1,25 +1,21 @@
-
-  <div class="edit_prof">
+<div class="edit_prof">
+  <% if @user == current_user %>
     <%= link_to "Edit Profile", edit_user_path %>
-  </div>
-
+  <% end %>
+</div>
 
 <div class="prof_header">
     <img class="prof_pic" src="<%= @user.profile_pic_url %>">
     <h1><%= "@#{@user.username}" %></h1>
 </div>
-
 <p class="bio"><%= @user.bio %></p>
 
 <%= render "posts/userposts" %>
 
 <p>
-  <a class="back">
-    <%= link_to "Back to all posts", "/" %>
-  </a>
-
-  <% if @user = current_user %>
-    <a class="delete">
+  <%= link_to "Back to all posts", "/", {:class => "back"} %>
+  <% if @user == current_user %>
+    <a class="change">
       <%= link_to "I'm vegan now", user_path(@user),
           method: :delete,
           data: { confirm: "Are you sure you want to permanently delete your account?" } %>
