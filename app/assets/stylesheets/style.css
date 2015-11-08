@@ -58,7 +58,7 @@ div > h1 {
 }
 
 .back {
-
+  text-align: left;
 }
 
 .posts_container {
@@ -75,6 +75,22 @@ div > h1 {
 .burger_pic {
   width: 300px;
   height: 300px;
+}
+
+.bites {
+  margin: 0 auto;
+  width: 300px;
+  text-align: left;
+}
+
+.bite_pic {
+  width: 25px;
+  height: 25px;
+}
+
+.bite_count {
+  display: inline;
+  vertical-align: super;
 }
 
 .post > p {
@@ -113,4 +129,13 @@ div > h1 {
 
 .caption {
   font-style: italic;
+}
+
+ol {
+  display: inline-block;
+  margin: 0 auto;
+}
+
+li {
+  margin-left: -20px;
 }

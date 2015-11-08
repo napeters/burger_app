@@ -5,6 +5,10 @@
       <a href="<%= user_post_path(user,post) %>">
         <img class="burger_pic" src="<%= post.image_url %>" >
       </a>
+      <div class="bites">
+        <img class="bite_pic" src="http://emojipop.net/data/images/emoji_set_487.png" >
+        <p class="bite_count">count bites</p>
+      </div>
       <p><%= link_to "@#{user.username}", user_path(user) %></p>
       <p class="caption"><%= post.caption %></p>
     </div>

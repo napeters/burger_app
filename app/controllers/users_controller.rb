@@ -14,10 +14,12 @@ class UsersController < ApplicationController
 
     if @user.save
       flash.notice = "Account created!"
+      session[:user_id] = @user.id
       redirect_to @user
     else
       render 'new'
     end
+
   end
 
   def show
@@ -43,8 +45,9 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
+    session[:user_id] = nil
 
     flash.notice = "Account deleted!"
-    redirect_to users_path
+    redirect_to "/"
   end
 end
